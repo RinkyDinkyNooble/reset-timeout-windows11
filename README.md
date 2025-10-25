@@ -1,6 +1,14 @@
 # reset-timeout-windows11
 Disables automatic power timeouts by setting monitor, standby, and hibernate AC/DC values to 0 using powercfg. It reads current settings via GUIDs, checks for nonzero timeouts, resets them to 0, logs the changes, and displays a popup confirming successful timeout resets.
 
+### Purpose
+
+Windows 11 has an irritating tendency to automatically change the setting  
+**Settings → Power → Screen, sleep & hibernate timeouts → Turn my screen off after**  
+from **“Never”** to **“15 minutes (Recommended)”** without user consent.  
+
+This script exists to **counter that behavior**. It automatically resets all related power timeouts (monitor, standby, hibernate) to **0** at every login using **Task Scheduler**, ensuring the screen and system never turn off unexpectedly — no more manually fixing the setting each time Windows decides to revert it.
+
 ### How It Works
 
 1. **Define Power Setting GUIDs**  
